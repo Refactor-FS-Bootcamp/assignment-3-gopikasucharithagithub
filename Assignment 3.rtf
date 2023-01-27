@@ -1,0 +1,453 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset0 Calibri;}{\f2\fnil\fcharset0 inherit;}{\f3\fnil\fcharset0 Courier New;}{\f4\fnil Calibri;}{\f5\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red255\green255\blue255;\red54\green63\blue72;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa160\sl259\slmult0\ul\b\f0\fs32\lang9 A. JS Exercises:\par
+\ulnone\b0\fs22 1. Write a JS code to print numbers from 1 to 10.\par
+Ans: for (let i = 1; i <= 10; i++) \{\par
+  console.log(i);\par
+\}\par
+2. Write a JS code\~to print a 2D array.\par
+Ans: let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];\par
+for (let i = 0; i < arr.length; i++) \{\par
+  for (let j = 0; j < arr[i].length; j++) \{\par
+    console.log(arr[i][j]);\par
+  \}\par
+\}\par
+\par
+3.\~Write a JS code\~to print Even numbers in given array.\par
+Ans: let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\par
+let evenNumbers = arr.filter(function(num) \{\par
+  return num % 2 === 0;\par
+\});\par
+console.log(evenNumbers);\par
+\par
+4.\~Write a JS code\~to delete all occurrence of element in given array\par
+Ans: let arr = [1, 2, 3, 4, 5, 2, 7, 2, 9, 10];\par
+let elementToRemove = 2;\par
+\par
+for (let i = 0; i < arr.length; i++) \{\par
+  if (arr[i] === elementToRemove) \{\par
+    arr.splice(i, 1);\par
+    i--;\par
+  \}\par
+\}\par
+console.log(arr);\par
+\par
+5. Write a JS code\~to demonstrate Async loop\par
+Ans: async function asyncLoop() \{\par
+  let arr = [1, 2, 3, 4, 5];\par
+  for (let i = 0; i < arr.length; i++) \{\par
+    await asyncOperation(arr[i]);\par
+  \}\par
+\}\par
+\par
+async function asyncOperation(item) \{\par
+  return new Promise((resolve) => \{\par
+    setTimeout(() => \{\par
+      console.log(`Processing item $\{item\}`);\par
+      resolve();\par
+    \}, 1000);\par
+  \});\par
+\}\par
+\par
+\par
+6. Write a JS code to find the power of a number using for loop\par
+Ans : function findPower(base, exponent) \{\par
+  let result = 1;\par
+  for (let i = 0; i < exponent; i++) \{\par
+    result *= base;\par
+  \}\par
+  return result;\par
+\}\par
+console.log(findPower(2, 3)); // 8 (2*2*2)\par
+console.log(findPower(5, 2)); // 25 (5*5)\par
+\par
+7. Write a JS code to print a pattern using for loop\par
+Ans: function printPattern() \{\par
+  for (let i = 1; i <= 5; i++) \{\par
+    let row = "";\par
+    for (let j = 1; j <= i; j++) \{\par
+      row += "*";\par
+    \}\par
+    console.log(row);\par
+  \}\par
+\}\par
+printPattern();\par
+\par
+8. Write a JS code to find the no of digits in a number\par
+Ans: function findDigits(num) \{\par
+  return num.toString().length;\par
+\}\par
+console.log(findDigits(123)); // 3\par
+console.log(findDigits(4567)); // 4\par
+\par
+9. Write a JS code to calculate the sum of digits in a number\par
+Ans: function sumDigits(num) \{\par
+  let sum = 0;\par
+  while (num > 0) \{\par
+    sum += num % 10;\par
+    num = Math.floor(num / 10);\par
+  \}\par
+  return sum;\par
+\}\par
+console.log(sumDigits(123)); // 6\par
+console.log(sumDigits(4567)); // 18\par
+\par
+10. Write a JS code to find the largest number in an array\par
+Ans: function findLargest(arr) \{\par
+  let largest = arr[0];\par
+  for (let i = 1; i < arr.length; i++) \{\par
+    if (arr[i] > largest) \{\par
+      largest = arr[i];\par
+    \}\par
+  \}\par
+  return largest;\par
+\}\par
+console.log(findLargest([1, 2, 3, 4, 5])); // 5\par
+console.log(findLargest([-1, -2, -3, -4, -5])); // -1\par
+\par
+11. Write a JS code to find the number of zeros in 2D Matrix\par
+Ans: function countZeros(matrix) \{\par
+  let count = 0;\par
+  for (let i = 0; i < matrix.length; i++) \{\par
+    for (let j = 0; j < matrix[i].length; j++) \{\par
+      if (matrix[i][j] === 0) \{\par
+        count++;\par
+      \}\par
+    \}\par
+  \}\par
+  return count;\par
+\}\par
+\par
+const matrix = [\par
+  [1, 2, 0],\par
+  [0, 0, 0],\par
+  [3, 4, 5]\par
+];\par
+console.log(countZeros(matrix)); // 4\par
+\par
+12. Write a JS code to find product of two arrays\par
+Ans: function arrayProduct(arr1, arr2) \{\par
+  let product = [];\par
+  for (let i = 0; i < arr1.length; i++) \{\par
+    for (let j = 0; j < arr2.length; j++) \{\par
+      product.push(arr1[i] * arr2[j]);\par
+    \}\par
+  \}\par
+  return product;\par
+\}\par
+\par
+const arr1 = [1, 2, 3];\par
+const arr2 = [4, 5, 6];\par
+console.log(arrayProduct(arr1, arr2)); // [4, 5, 6, 8, 10, 12, 12, 15, 18]\par
+\par
+13. Write a JS code to print the Fibonacci series for a given value of N\par
+Ans: function fibonacci(n) \{\par
+  let a = 0, b = 1, c, series = [a, b];\par
+  for (let i = 2; i < n; i++) \{\par
+    c = a + b;\par
+    series.push(c);\par
+    a = b;\par
+    b = c;\par
+  \}\par
+  console.log(series.join(', '));\par
+\}\par
+\par
+fibonacci(10);\par
+\par
+14. Write a JS code to find N value in the Fibonacci series for a given number\par
+Ans: function findFibonacciIndex(num) \{\par
+  let a = 0, b = 1, c;\par
+  for (let i = 0; c <= num; i++) \{\par
+    c = a + b;\par
+    if (c === num) \{\par
+      return i + 3;\par
+    \}\par
+    a = b;\par
+    b = c;\par
+  \}\par
+  return -1;\par
+\}\par
+console.log(findFibonacciIndex(13)); \par
+\par
+15. Write a JS code to count all letters in a word\par
+Ans: function countLetters(word) \{\par
+  let letterCount = \{\};\par
+  for (let i = 0; i < word.length; i++) \{\par
+    let letter = word[i];\par
+    if (!letterCount[letter]) \{\par
+      letterCount[letter] = 1;\par
+    \} else \{\par
+      letterCount[letter]++;\par
+    \}\par
+  \}\par
+  return letterCount;\par
+\}\par
+console.log(countLetters("hello")); \par
+\par
+\par
+16. Write a JS code to find duplicate values in a given array\par
+Ans: function findDuplicates(arr) \{\par
+  let duplicates = [];\par
+  let map = \{\};\par
+  for (let i = 0; i < arr.length; i++) \{\par
+    if (map[arr[i]]) \{\par
+      duplicates.push(arr[i]);\par
+    \} else \{\par
+      map[arr[i]] = true;\par
+    \}\par
+  \}\par
+  return duplicates;\par
+\}\par
+console.log(findDuplicates([1, 2, 3, 4, 2, 5, 6, 3])); \par
+\par
+17. Write a JS code for binary search algorithm\par
+Ans: function binarySearch(arr, target) \{\par
+  let start = 0;\par
+  let end = arr.length - 1;\par
+  while (start <= end) \{\par
+    let middle = Math.floor((start + end) / 2);\par
+    if (arr[middle] === target) \{\par
+      return middle;\par
+    \} else if (arr[middle] < target) \{\par
+      start = middle + 1;\par
+    \} else \{\par
+      end = middle - 1;\par
+    \}\par
+  \}\par
+  return -1;\par
+\}\par
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5)); // 4\par
+\par
+\par
+\ul\b\fs32 B. JS For Loop Exercises:\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\ulnone\b0\f1\fs22 Get the sum of two arrays\'85 actually the sum of all their elements. P.S. Each array includes only integer numbers. Output is a number too.\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let arr_1 = [3, 5, 22, 5,  7,  2,  45, 75, 89, 21, 2]; // --> 276\par
+let arr_2 = [9, 2, 42, 55, 71, 22, 4,  5,  90, 25, 26]; // --> 351\par
+// Example output: \par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // 276 + 351 = 627\par
+\par
+Ans:  let arr_1 = [3, 5, 22, 5, 7, 2, 45, 75, 89, 21, 2];\par
+let arr_2 = [9, 2, 42, 55, 71, 22, 4, 5, 90, 25, 26];\par
+\par
+let sumArr1 = 0;\par
+let sumArr2 = 0;\par
+\par
+for (let i = 0; i < arr_1.length; i++) \{\par
+    sumArr1 += arr_1[i];\par
+\}\par
+\par
+for (let i = 0; i < arr_2.length; i++) \{\par
+    sumArr2 += arr_2[i];\par
+\}\par
+\par
+let totalSum = sumArr1 + sumArr2;\par
+console.log(totalSum);\par
+\par
+\f3\fs19\par
+\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa264\sl486\slmult0\cf0\highlight1\f1\fs22 Using a for loop print all even numbers up to and including n. Don\rquote t include 0.\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let n1 = 22; \par
+// Example output: \par
+// 2 4 6 8 10 12 14 16 18 20 22 OR each item on a new line\par
+\par
+Ans: let n1 = 22;\par
+\par
+for (let i = 2; i <= n1; i++) \{\par
+    if (i % 2 === 0) \{\par
+        console.log(i);\par
+    \}\par
+\}\par
+\par
+\par
+\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa264\sl486\slmult0\cf0\highlight1\f1\fs22 Using a for loop output the elements in reverse order\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let arr = [43, "what", 9, true, "cannot", false, "be", 3, true];\par
+// Example output: \par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // true 3.5  be  false cannot  true 9 what 43 OR each item on a new line\par
+\par
+Ans: let arr = [43, "what", 9, true, "cannot", false, "be", 3, true];\par
+\par
+for (let i = arr.length - 1; i >= 0; i--) \{\par
+    console.log(arr[i]);\par
+\}\par
+\f3\fs19\par
+\par
+\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\cf0\highlight0\f1\fs22 Given two arrays of integers. Add up each element in the same position and\line create a new array containing the sum of each pair. Assume both arrays are of the same length.\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16  \par
+let arr_3   = [4, 6, 7];\par
+let arr_4    = [8, 1, 9];\par
+// Example output: \par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // [12, 7, 16]\par
+\par
+Ans: let arr_3 = [4, 6, 7];\par
+let arr_4 = [8, 1, 9];\par
+let sumArr = [];\par
+\par
+for (let i = 0; i < arr_3.length; i++) \{\par
+    sumArr.push(arr_3[i] + arr_4[i]);\par
+\}\par
+\par
+console.log(sumArr);\par
+\f3\fs19\par
+\par
+\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\cf0\highlight0\f1\fs22 Given a string change every second letter to an uppercase \lquote Z\rquote . Assume\line there are no space.\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let str1 = "javascript";  \par
+// Example output: \par
+// jZvZsZrZpZ OR each letter on a new line\par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // HINT: You can use if((i+1) % 2 == 0) to check for even indexes \par
+\par
+Ans: let str1 = "javascript"; \par
+let newString = "";\par
+\par
+for (let i = 0; i < str1.length; i++) \{\par
+  if ((i + 1) % 2 == 0) \{\par
+    newString += "Z";\par
+  \} else \{\par
+    newString += str1[i];\par
+  \}\par
+\}\par
+console.log(newString);\par
+\par
+\par
+\f3\fs19\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\cf0\highlight0\f1\fs22 Check if a string contains the letter \ldblquote y\rdblquote . Print \ldblquote yes\rdblquote  if it does and \ldblquote no\rdblquote  if it does not.\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let str2 = "don\rquote t know why";\par
+// Example output: \par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // \ldblquote yes\rdblquote  \par
+\par
+Ans: let str2 = "don\rquote t know why";\par
+let containsY = false;\par
+\par
+for (let i = 0; i < str2.length; i++) \{\par
+  if (str2[i] === "y") \{\par
+    containsY = true;\par
+    break;\par
+  \}\par
+\}\par
+\par
+if (containsY) \{\par
+  console.log("yes");\par
+\} else \{\par
+  console.log("no");\par
+\}\par
+\par
+\par
+\par
+\f3\fs19\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\cf0\highlight0\f1\fs22 Given a number n Calculate the factorial of the number\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let n2 = 4; //  4 * 3 * 2 * 1 = 24\par
+// Example output:\par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // 24\par
+\par
+Ans: let n2 = 4;\par
+let result = 1;\par
+for(let i = n2; i > 0; i--) \{\par
+    result *= i;\par
+\}\par
+console.log(result);\par
+\par
+\f3\fs19\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\cf0\highlight0\f1\fs22 Write a program that will allow someone to guess a four-digit pin exactly 4\line times. If the user guesses the number correctly. It prints \ldblquote That was\line correct!\rdblquote  Otherwise, it will print \ldblquote Sorry that was wrong.\rdblquote  Program stops after the 4th attempt of if they got it right.\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let pin = 0704;\par
+// Example output:\par
+// Please make your guess: \par
+// 4544 \par
+// Sorry that was wrong.\par
+// Please make your guess: \par
+// 4444\par
+// Sorry that was wrong.\par
+// Please make your guess: \par
+// 0704\par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // That was correct!\par
+\par
+Ans: let pin = 0704;\par
+let attempts = 0;\par
+\par
+while (attempts < 4) \{\par
+    let guess = prompt("Please make your guess:");\par
+    if (guess == pin) \{\par
+        console.log("That was correct!");\par
+        break;\par
+    \} else \{\par
+        console.log("Sorry that was wrong.");\par
+    \}\par
+    attempts++;\par
+\}\par
+\par
+\f3\fs19\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\cf0\highlight0\f1\fs22 Write a program that will check if two strings are palindromes. A palindrome is a word that spells the same forward and backward.\line Palindrome: a word, phrase, or sequence that reads the same backward as\line forward, e.g., madam or nurses run.\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let str3 = "racecar";\par
+let str4 = "Java";\par
+// Example output:\par
+// string1 palindrome?: \par
+// Yes \par
+// string2 palindrome?: \par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // No \par
+\par
+\par
+Ans : let str3 = "racecar";\par
+let str4 = "Java";\par
+\par
+function isPalindrome(str) \{\par
+    let reversed = str.split('').reverse().join('');\par
+    return str === reversed;\par
+\}\par
+\par
+console.log(`string1 palindrome?:`)\par
+console.log(isPalindrome(str3) ? "Yes" : "No");\par
+\par
+console.log(`string2 palindrome?:`)\par
+console.log(isPalindrome(str4) ? "Yes" : "No");\par
+\par
+\f3\fs19\par
+
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\cf0\highlight0\f1\fs22 This is a code wars kata. click here to train on \ldblquote Grasshopper \f4\endash\f1  Summation\f4\rdblquote\f1  on\line code wars. Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.\par
+
+\pard\sl240\slmult1\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf1\highlight2\f2\fs16 let num1 = 2; \par
+let num2 = 8; \par
+// Example output: \par
+
+\pard\sl302\slmult0\tx916\tx1832\tx2748\tx3664\tx4580\tx5396\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656 // 1 + 2 = 3\f3\fs19\par
+
+\pard\sa160\sl259\slmult0\cf0\highlight0\f0\fs28\par
+\f1\fs22 Ans:   function summation(num) \{\par
+  let sum = 0;\par
+  for (let i = 1; i <= num; i++) \{\par
+    sum += i;\par
+  \}\par
+  return sum;\par
+\}\par
+\par
+console.log(summation(num1)); \par
+console.log(summation(num2)); \par
+}
+ 
